@@ -38,49 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- PROJECT MODAL: rellenar contenido dinámicamente ---------- */
-  const projectModal = document.getElementById('projectModal');
-  if (projectModal) {
-    projectModal.addEventListener('show.bs.modal', (event) => {
-      const trigger = event.relatedTarget;
-      if (!trigger) return;
-
-      const title = trigger.dataset.title || 'Proyecto';
-      const img = trigger.dataset.img || 'assets/proyectos/proyecto1.jpg';
-      const desc = trigger.dataset.desc || '';
-      const stack = trigger.dataset.stack || '';
-
-      projectModal.querySelector('.modal-title').textContent = title;
-      projectModal.querySelector('#projectModalImg').src = img;
-      projectModal.querySelector('#projectModalImg').alt = title;
-      projectModal.querySelector('#projectModalDesc').textContent = desc;
-      projectModal.querySelector('#projectModalStack').textContent = stack;
-
-      const demo = trigger.dataset.demo || '#';
-      const code = trigger.dataset.code || '#';
-      projectModal.querySelector('#projectModalDemo').href = demo;
-      projectModal.querySelector('#projectModalCode').href = code;
-    });
-  }
-
-  /* ---------- CONTACT FORM -> abre mailto (demo) ---------- */
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (!name || !email || !message) {
-        alert('Completá todos los campos');
-        return;
-      }
-      const subject = encodeURIComponent(`Contacto desde portfolio: ${name}`);
-      const body = encodeURIComponent(`${message}\n\n--\n${name}\n${email}`);
-      window.location.href = `mailto:tuemail@dominio.com?subject=${subject}&body=${body}`;
-    });
-  }
-
   /* ---------- Cerrar menú mobile al click en enlace ---------- */
   document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
     link.addEventListener('click', () => {
@@ -102,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Si quieres tener un fallback para otras páginas sin hero-section
+// fallback para otras páginas sin hero-section
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -113,35 +70,28 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// FORMULARIO CONTACTO - Enviar datos a Google Apps Script
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-// Conectar formulario con HTML
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+    const formData = new FormData(form);
 
-  const form = e.target;
-  const formData = new FormData(form);
-
-  fetch("https://script.google.com/macros/s/AKfycby9EueOwG6L8HuBZkrgho6JMACXFI-iVYL0mIPdqPa9M4w2WIrVqqCn6zH6MZXAdlLjeA/exec", {
-    method: "POST",
-    body: new URLSearchParams(formData)
-  })
+    fetch("https://script.google.com/macros/s/AKfycby9EueOwG6L8HuBZkrgho6JMACXFI-iVYL0mIPdqPa9M4w2WIrVqqCn6zH6MZXAdlLjeA/exec", {
+      method: 'POST',
+      body: new URLSearchParams(formData)
+    })
     .then(response => {
       if (response.ok) {
-        alert("✅ Mensaje enviado correctamente. ¡Gracias por contactarnos!");
+        alert("✅ Mensaje enviado correctamente.");
         form.reset();
       } else {
         alert("❌ Hubo un problema al enviar el mensaje.");
       }
     })
     .catch(error => {
-      console.error("Error:", error);
-      alert("⚠️ Error al enviar el formulario.");
+      alert("⚠️ Error al enviar: " + error.message);
     });
+  });
 });
-
-
-
-
-
-
-
