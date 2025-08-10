@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kevin Luna — Portafolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (iconos) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNavbar" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <!-- Pon tu logo real en assets/logo.png -->
+        <img src="assets/Logo-Kevin-Luna.svg" alt="Logo Kevin Luna" class="me-2 logo-img" onerror="this.style.display='none'">
+        <span class="brand-name">Kevin Luna</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+              aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+          <li class="nav-item ms-3">
+            <a class="btn btn-outline-light btn-sm" href="assets/cv/KevinLuna_CV.pdf" download>Descargar CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- HERO -->
+<header class="hero-section">
+  <!-- Video de fondo -->
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-fallback.jpg">
+    <source src="assets/Video de WhatsApp 2025-08-09 a las 19.29.46_32dc202e.mp4" type="video/mp4" />
+    Tu navegador no soporta videos HTML5.
+  </video>
+
+  <!-- Overlay del color de marca -->
+  <div class="hero-overlay"></div>
+
+  <!-- Fondo fallback (para móviles) -->
+  <div class="hero-fallback" style="background-image:url('assets/hero-fallback.jpg')"></div>
+
+  <!-- Contenido del hero -->
+  <div class="container hero-content text-center text-white">
+    <div class="hero-card reveal">
+      <h1 class="display-4 fw-bold" style="color: var(--white);">Kevin Luna</h1>
+      <p class="lead fw-semibold" style="color: var(--white);">
+        Experto en Negocios Digitales • Diplomado en Data Science • Diplomado en Desarrollo Web Full Stack
+      </p>
+      <p class="fst-italic slogan" style="color: #fff7e6;">
+        "Si tenés una idea, yo te ayudo a hacerla digital."
+      </p>
+      <p class="mb-3" style="color: var(--white);">
+        Conecto datos, procesos y productos digitales para que tomen decisiones que generen valor.
+      </p>
+
+      <div class="d-flex justify-content-center gap-2">
+        <a class="btn btn-cta btn-lg" href="portfolio.html" style="background-color: var(--brand); color: var(--black); border: none;">
+          Ver proyectos
+        </a>
+        <a class="btn btn-outline-light btn-lg" href="about.html" style="color: var(--white); border-color: var(--white);">
+          Sobre mí
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ICON CAROUSEL (scroll infinito) -->
+<section class="tools-section py-5">
+  <div class="container">
+    <h3 class="section-title text-center mb-4">Herramientas & Tecnologías</h3>
+    <div class="icon-scroller" aria-hidden="true">
+      <div class="icon-track">
+        <!-- Usa FontAwesome cuando esté disponible; para logos no disponibles usa imágenes en assets/logos/ -->
+        <div class="tool"><i class="fab fa-github"></i><span>GitHub</span></div>
+        <div class="tool"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS5cq09y-kQLUWkV6yDj5s4PmniVgj9n4KzxtbJqUXiMlhp5eSG4T25gdIY5OUpKRVNqo&usqp=CAU" alt="VS Code" class="tool-img"><span>VS Code</span></div>
+        <div class="tool"><img src="https://1000logos.net/wp-content/uploads/2024/08/Vercel-Logo.png" alt="Vercel" class="tool-img"><span>Vercel</span></div>
+        <div class="tool"><i class="fas fa-database"></i><span>MySQL</span></div>
+        <div class="tool"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="tool"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="tool"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+        <div class="tool"><i class="fab fa-react"></i><span>React</span></div>
+        <!-- duplicados para loop -->
+        <div class="tool"><i class="fab fa-github"></i><span>GitHub</span></div>
+        <div class="tool"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS5cq09y-kQLUWkV6yDj5s4PmniVgj9n4KzxtbJqUXiMlhp5eSG4T25gdIY5OUpKRVNqo&usqp=CAU" alt="VS Code" class="tool-img"><span>VS Code</span></div>
+        <div class="tool"><img src="https://1000logos.net/wp-content/uploads/2024/08/Vercel-Logo.png" alt="Vercel" class="tool-img"><span>Vercel</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PROYECTOS DESTACADOS (Sneak peek) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h3 class="section-title mb-4">Proyectos destacados</h3>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card project-card reveal" data-bs-toggle="modal" data-bs-target="#projectModal"
+                   data-title="Pagina Web" data-img="assets/paginaweb-abierto-pampeano.png"
+                   data-desc="Abierto Pampeano de Ballrom" data-stack="Python, Dash, MySQL">
+            <img src="assets/paginaweb-abierto-pampeano.png" class="card-img-top" alt="Proyecto 1">
+            <div class="card-body">
+              <h5 class="card-title">Pagina Web</h5>
+              <p class="card-text small">Abierto Pampeano de Ballrom</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <article class="card project-card reveal" data-bs-toggle="modal" data-bs-target="#projectModal"
+                   data-title="Ecommerce MVP" data-img="assets/proyectos/proyecto2.jpg"
+                   data-desc="Ecommerce con checkout, panel admin y despliegue en Vercel." data-stack="React, Node, Stripe">
+            <img src="assets/proyectos/proyecto2.jpg" class="card-img-top" alt="Proyecto 2">
+            <div class="card-body">
+              <h5 class="card-title">Ecommerce MVP</h5>
+              <p class="card-text small">Implementación del flujo de compras y admin básico.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Más cards... añade tantas como quieras -->
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="portfolio.html" class="btn btn-dark">Ver todo el portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagen Parallax -->
+<section class="parallax-image"></section>
+
+  <!-- CTA -->
+  <section class="cta-banner text-white text-center py-5">
+    <div class="container">
+      <h2 class="mb-2">¿Listo para transformar tu idea en producto?</h2>
+      <p class="mb-3">Hablemos — puedo ayudarte con análisis, producto y despliegue.</p>
+      <a href="contact.html" class="btn btn-lg btn-outline-light">Contactarme</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+<footer class="footer bg-black text-white py-4">
+  <div class="container">
+    <div>
+      <strong>Kevin Luna</strong><br/>
+      Experto en Negocios Digitales • Data Science • Desarrollo Web Full Stack
+    </div>
+    <div class="social-links mt-2">
+      <a href="https://instagram.com/tu_usuario" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="https://github.com/tu_usuario" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+      <a href="mailto:tuemail@dominio.com" aria-label="Email"><i class="fas fa-envelope fa-lg"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="whatsapp-float" href="https://wa.me/5492954682932?text=Hola%20Kevin%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- PROJECT MODAL (bootstrap) -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalLabel">Proyecto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img id="projectModalImg" src="" alt="Imagen del proyecto" class="img-fluid mb-3 rounded">
+          <p id="projectModalDesc"></p>
+          <p><strong>Stack:</strong> <span id="projectModalStack"></span></p>
+        </div>
+        <div class="modal-footer">
+          <a id="projectModalDemo" href="#" target="_blank" class="btn btn-primary">Ver demo</a>
+          <a id="projectModalCode" href="#" target="_blank" class="btn btn-outline-dark">Ver código</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
