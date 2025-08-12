@@ -12,11 +12,10 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNavbar" aria-label="Main navigation">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black" id="mainNavbar" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <!-- Pon tu logo real en assets/logo.png -->
-        <img src="assets/Logo-Kevin-Luna.svg" alt="Logo Kevin Luna" class="me-2 logo-img" onerror="this.style.display='none'">
+        <img src="assets/Logo-Kevin-Luna.svg" alt="Logo Kevin Luna" class="me-2 logo-img" style="height:40px;" onerror="this.style.display='none'">
         <span class="brand-name">Kevin Luna</span>
       </a>
 
@@ -39,61 +38,86 @@
     </div>
   </nav>
 
-
   <main class="pt-7">
-    <section class="container py-6">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5">
-          <img src="assets/yo.jpg" alt="Kevin Luna" class="img-fluid rounded shadow reveal">
-        </div>
-        <div class="col-lg-7">
-          <h1>Hola — soy Kevin</h1>
-          <p class="lead">Experto en Negocios Digitales. Diplomado en Data Science y en Desarrollo Web Full Stack.</p>
+  <section class="container py-6">
 
-          <h4>Qué hago</h4>
-          <ul>
-            <li>Analítica de datos, dashboards e informes accionables.</li>
-            <li>Desarrollo Web (front + back), APIs y despliegues en Vercel/Render.</li>
-            <li>Automatizaciones y mejora de procesos operativos.</li>
-          </ul>
+    <!-- Fila con imagen y texto lado a lado -->
+    <div class="row align-items-center g-5">
+      
+      <div class="col-lg-5 text-center">
+        <img src="assets/Imagen de WhatsApp 2025-08-11 a las 20.34.40_00336001.jpg" alt="Kevin Luna" class="img-fluid rounded shadow reveal profile-img">
+      </div>
+      
+      <div class="col-lg-7">
+        <h1 class="mb-2">Hola — soy Kevin</h1>
+        <p class="lead mb-4">Experto en Negocios Digitales. Diplomado en Data Science y en Desarrollo Web Full Stack.</p>
+        <p class="slogan mb-4 fst-italic">Si tenés una idea, yo te ayudo a hacerla digital.</p>
+        
 
-          <h4 class="mt-4">Carta de presentación</h4>
-          <div class="card p-3 mb-3 reveal">
-            <p>
-              Soy una persona orientada a resultados con formación en administración y especializaciones en Data Science y desarrollo web. 
-              Aporto pensamiento analítico y práctica técnica para transformar datos en decisiones y proyectos en productos digitales.
-            </p>
-            <p class="small text-muted mb-0">Puedo liderar desde el relevamiento hasta el despliegue y monitoreo de soluciones.</p>
-          </div>
+        <h4>Qué hago</h4>
+        <ul class="mb-0">
+          <li>Analítica avanzada de datos para transformar información en insights prácticos y decisiones estratégicas.</li>
+          <li>Diseño y desarrollo de dashboards interactivos y reportes personalizados para el seguimiento de KPIs.</li>
+          <li>Desarrollo web full stack: creación de sitios, aplicaciones y APIs con despliegues en plataformas como Vercel y Render.</li>
+          <li>Automatización de procesos y optimización operativa mediante herramientas tecnológicas.</li>
+          <li>Asesoría y acompañamiento a emprendedores y pymes en la transformación digital y estrategias de negocio.</li>
+          <li>Implementación de soluciones integrales que combinan datos, tecnología y visión empresarial para maximizar resultados.</li>
+        </ul>
+      </div>
 
-          <div class="d-flex gap-2">
-            <a class="btn btn-primary" href="assets/cv/KevinLuna_CV.pdf" download>Descargar CV</a>
-            <a class="btn btn-outline-dark" href="contact.html">Contactarme</a>
-          </div>
+    </div>
+
+    <!-- Carta de presentación debajo, en otra fila -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4 class="mb-3">Carta de presentación</h4>
+        <div class="card p-4 reveal bg-light border-0 presentation-card">
+          <p>
+            Soy una persona orientada a resultados con formación en administración, especializada en Data Science y desarrollo web full stack. Me apasiona conectar la analítica con la tecnología para generar soluciones digitales que aporten valor real a los negocios.
+          </p>
+          <p>
+            Trabajo combinando pensamiento crítico, habilidades técnicas y comunicación efectiva para liderar proyectos desde la identificación de necesidades hasta el despliegue y monitoreo de soluciones escalables y sostenibles.
+          </p>
+          <p>
+            Creo firmemente que el poder de los datos y la tecnología es clave para tomar decisiones inteligentes y transformar ideas en productos digitales innovadores. Me gusta colaborar estrechamente con clientes para entender sus objetivos y superar sus expectativas.
+          </p>
+          <p class="small text-muted mb-0">Puedo liderar proyectos de principio a fin, asegurando calidad, funcionalidad y resultados medibles.</p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-    <!-- WHATSAPP FLOAT -->
-  <a class="whatsapp-float" href="https://wa.me/549XXXXXXXXXX?text=Hola%20Kevin%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <!-- Botones debajo de todo -->
+    <div class="row mt-4">
+      <div class="col-12 d-flex gap-3 flex-wrap">
+        <a class="btn btn-primary" href="assets/cv/KevinLuna_CV.pdf" download>Descargar CV</a>
+        <a class="btn btn-outline-dark" href="contact.html">Contactarme</a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="whatsapp-float" href="https://wa.me/5492954682932?text=Hola%20Kevin%2C%20vi%20tu%20portafolio" target="_blank" rel="noopener" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- FOOTER -->
-<footer class="footer bg-black text-white py-4">
-  <div class="container">
-    <div>
-      <strong>Kevin Luna</strong><br/>
-      Experto en Negocios Digitales • Data Science • Desarrollo Web Full Stack
+  <footer class="footer bg-black text-white py-4">
+    <div class="container text-center">
+      <div>
+        <strong>Kevin Luna</strong><br/>
+        Experto en Negocios Digitales • Data Science • Desarrollo Web Full Stack
+      </div>
+      <div class="social-links mt-2">
+        <a href="https://instagram.com/emprendedordigitalia" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://github.com/kevinluna94" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+        <a href="mailto:kevineluna94@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-lg"></i></a>
+      </div>
     </div>
-    <div class="social-links mt-2">
-      <a href="https://instagram.com/tu_usuario" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-      <a href="https://github.com/tu_usuario" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
-      <a href="mailto:tuemail@dominio.com" aria-label="Email"><i class="fas fa-envelope fa-lg"></i></a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>

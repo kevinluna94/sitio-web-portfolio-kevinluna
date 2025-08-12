@@ -301,8 +301,8 @@ a:focus {
   right: 20px;
   width: 56px;
   height: 56px;
-  background-color: var(--brand); /* tu amarillo */
-  color: var(--black);            /* texto negro */
+  background-color: var(--brand);
+  color: var(--black);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -316,12 +316,11 @@ a:focus {
 
 .whatsapp-float:hover,
 .whatsapp-float:focus {
-  background-color: #d48f00; /* un tono más oscuro */
+  background-color: #d48f00;
   color: var(--white);
   transform: translateY(-6px);
   box-shadow: 0 12px 35px rgba(212, 143, 0, 0.35);
 }
-
 
 /* Reveal animation */
 .reveal {
@@ -349,5 +348,81 @@ a:focus {
   }
   .icon-track {
     animation-duration: 12s;
+  }
+}
+
+/* ------------------------------------------ */
+/* Imagen de perfil */
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------------------ */
+/* Lista de trabajos */
+.work-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #5a4c00;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.work-list li {
+  margin-bottom: 0.7rem;
+}
+
+/* ------------------------------------------ */
+/* Carta de presentación */
+.presentation-card {
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(246, 167, 0, 0.15);
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa; /* para que contraste con el texto */
+}
+
+/* ------------------------------------------ */
+/* Slogan */
+.slogan {
+  font-size: 1.3rem;
+  color: var(--brand);
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Botones adaptativos para móviles */
+@media (max-width: 575.98px) {
+  .d-flex.gap-3.flex-wrap > a.btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+/* Centrado en tablets y móviles */
+@media (max-width: 991.98px) {
+  .col-lg-5,
+  .col-lg-7 {
+    text-align: center;
+  }
+  .work-list {
+    padding-left: 0;
+    list-style-position: inside;
   }
 }
