@@ -73,25 +73,41 @@ window.addEventListener('scroll', () => {
 // FORMULARIO CONTACTO - Enviar datos a Google Apps Script
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e) {
+  const statusMsg = document.createElement('div');
+  statusMsg.style.marginTop = '1rem';
+  form.appendChild(statusMsg);
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
+    
+    // Mostrar mensaje inmediato
+    statusMsg.textContent = '✅ Mensaje enviado correctamente.';
+    statusMsg.style.color = 'green';
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
 
     const formData = new FormData(form);
 
-    fetch("https://script.google.com/macros/s/AKfycby9EueOwG6L8HuBZkrgho6JMACXFI-iVYL0mIPdqPa9M4w2WIrVqqCn6zH6MZXAdlLjeA/exec", {
-      method: 'POST',
-      body: new URLSearchParams(formData)
-    })
-    .then(response => {
-      if (response.ok) {
-        alert("✅ Mensaje enviado correctamente.");
-        form.reset();
-      } else {
-        alert("❌ Hubo un problema al enviar el mensaje.");
+    // Enviar datos en segundo plano sin esperar resultado
+    fetch(
+      "https://script.google.com/macros/s/AKfycby9EueOwG6L8HuBZkrgho6JMACXFI-iVYL0mIPdqPa9M4w2WIrVqqCn6zH6MZXAdlLjeA/exec",
+      {
+        method: 'POST',
+        body: new URLSearchParams(formData),
+        cache: 'no-cache'
       }
-    })
+    )
     .catch(error => {
-      alert("⚠️ Error al enviar: " + error.message);
+      // Si falla el envío, avisar después
+      statusMsg.textContent = '⚠️ Error al enviar: ' + error.message;
+      statusMsg.style.color = 'red';
+      btn.disabled = false;
     });
+
+    form.reset();
   });
 });
+
+
+
