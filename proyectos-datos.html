@@ -56,27 +56,10 @@
     <div class="container">
       <h2 class="text-center mb-5">Galería de Proyectos</h2>
       <div class="row g-4">
-         <!-- Proyecto Ingeniería de Datos -->
-         <!--<div class="col-md-4">
-          <img src="assets/datos/ingenieria1.png" class="img-fluid gallery-img" alt="Proyecto Ingeniería de Datos" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="ingenieria">
-        </div>
-        <div class="col-md-4">
-          <img src="assets/datos/ingenieria2.png" class="img-fluid gallery-img" alt="Proyecto Ingeniería de Datos" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="ingenieria">
-        </div>-->
-        <!-- Proyecto Ciencia de Datos -->
-        <!-- <div class="col-md-4">
-          <img src="assets/datos/ciencia1.png" class="img-fluid gallery-img" alt="Proyecto Ciencia de Datos" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="ciencia">
-        </div>
-        <div class="col-md-4">
-          <img src="assets/datos/ciencia2.png" class="img-fluid gallery-img" alt="Proyecto Ciencia de Datos" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="ciencia">
-        </div>-->
         <!-- Proyecto Data Analyst -->
         <div class="col-md-4">
           <img src="assets/Dasboard Gastos DGRN.png" class="img-fluid gallery-img" alt="Proyecto Data Analyst" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="analista">
         </div>
-        <!--<div class="col-md-4">
-          <img src="assets/datos/analista2.png" class="img-fluid gallery-img" alt="Proyecto Data Analyst" data-bs-toggle="modal" data-bs-target="#galleryModal" data-gallery="analista">
-        </div>-->
       </div>
     </div>
   </section>
@@ -93,7 +76,10 @@
       </div>
       <div class="modal-footer justify-content-between">
         <button class="btn btn-light" id="prevBtn">&laquo; Anterior</button>
-        <button class="btn btn-light" id="nextBtn">Siguiente &raquo;</button>
+        <div>
+          <button class="btn btn-light" id="nextBtn">Siguiente &raquo;</button>
+          <a href="#" target="_blank" id="viewProjectBtn" class="btn btn-brand">Ver Proyecto</a>
+        </div>
       </div>
     </div>
   </div>
@@ -107,34 +93,45 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const galleries = {
-    ingenieria: ["assets/datos/ingenieria1.png","assets/datos/ingenieria2.png"],
-    ciencia: ["assets/datos/ciencia1.png","assets/datos/ciencia2.png"],
-    analista: ["assets/Dasboard Gastos DGRN.png","assets/Dashboard 2 Gtos DGRN.png"]
+    ingenieria: {
+      images: ["assets/datos/ingenieria1.png","assets/datos/ingenieria2.png"],
+      link: "https://tulink-ingenieria.com"
+    },
+    ciencia: {
+      images: ["assets/datos/ciencia1.png","assets/datos/ciencia2.png"],
+      link: "https://tulink-ciencia.com"
+    },
+    analista: {
+      images: ["assets/Dasboard Gastos DGRN.png","assets/Dashboard 2 Gtos DGRN.png"],
+      link: "https://app.powerbi.com/view?r=eyJrIjoiYjhkMzdlZmUtNTQ3OC00MTAyLWFmMTMtNTcyY2U2MzU0Njg3IiwidCI6IjA5YzcyZjU3LTM1ZjYtNDdlOS05ZTllLTI0NGUyMmM3NzdkOSJ9 "
+    }
   };
 
-  let currentGallery = [];
+  let currentGallery = {};
   let currentIndex = 0;
   const modalImage = document.getElementById("modalImage");
   const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+  const viewProjectBtn = document.getElementById("viewProjectBtn");
 
   // Abrir modal y mostrar la imagen correcta
   document.querySelectorAll(".gallery-img").forEach(img => {
     img.addEventListener("click", () => {
       const galleryName = img.dataset.gallery;
       currentGallery = galleries[galleryName];
-      currentIndex = currentGallery.indexOf(img.getAttribute("src"));
-      modalImage.src = currentGallery[currentIndex];
+      currentIndex = currentGallery.images.indexOf(img.getAttribute("src"));
+      modalImage.src = currentGallery.images[currentIndex];
+      viewProjectBtn.href = currentGallery.link;
     });
   });
 
   // Botones siguiente/anterior
   document.getElementById("prevBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    modalImage.src = currentGallery[currentIndex];
+    currentIndex = (currentIndex - 1 + currentGallery.images.length) % currentGallery.images.length;
+    modalImage.src = currentGallery.images[currentIndex];
   });
   document.getElementById("nextBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % currentGallery.length;
-    modalImage.src = currentGallery[currentIndex];
+    currentIndex = (currentIndex + 1) % currentGallery.images.length;
+    modalImage.src = currentGallery.images[currentIndex];
   });
 
   // Navegación con teclado
