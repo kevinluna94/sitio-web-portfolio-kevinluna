@@ -111,3 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// main.js o script al final del body
+const diplomas = document.querySelectorAll('.reveal-hover');
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+  diplomas.forEach(d => {
+    const top = d.getBoundingClientRect().top;
+    if(top < windowHeight - 50) d.classList.add('visible');
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
