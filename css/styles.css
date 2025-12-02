@@ -385,7 +385,6 @@ a:focus {
 
 
 /* Estilo general diplomas */
-
 .diploma-card {
   overflow: visible !important; /* permitir que la imagen salga de la card */
   position: relative; /* necesario para que z-index funcione */
@@ -417,6 +416,12 @@ a:focus {
   z-index: 10;
   position: relative;
 }
+
+/* Espacio inferior adicional para evitar que choque con el footer */
+#diplomas-section {
+  padding-bottom: 80px; /* Ajustable */
+}
+
 
 
 
